@@ -1,0 +1,27 @@
+import java.util.*;
+  class sub 
+ {
+     public static void main (String[]args)
+     {
+         Scanner sc= new Scanner(System.in);
+         
+        System.out.println("enter java marks");
+        int w=sc.nextInt();
+        
+        System.out.println("enter dbms marks");
+        int x=sc.nextInt();
+        
+        System.out.println("enter oss marks");
+        int y=sc.nextInt();
+        
+        System.out.println("enter befa marks");
+        int z=sc.nextInt();
+        
+       int sum=0;
+        sum=w+x+y+z;
+        float avg;
+        avg= (sum/4)/10;
+        System.out.println("grade" + avg );
+        sc.close();
+     }
+ }
