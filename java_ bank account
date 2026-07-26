@@ -1,67 +1,59 @@
-import java.util.*;
-class Account
-{
-    Scanner sc=new Scanner(System.in);
-    
-     String name;
+import java.util.Scanner;
+
+class Account {
+
+    Scanner sc = new Scanner(System.in);
+
+    String name;
     int number;
     float balance;
 
-    public void createAccounnt()
-    {
-       System.out.println("enter Account holder name");
-         name= sc.next();
-        
-         System.out.println("enter Account Number");
-         number= sc.nextInt();
-       
-        System.out.println("enter Account intial balance");
-          balance= sc.nextFloat();
+    public void createAccount() {
+        System.out.print("Enter Account Holder Name: ");
+        name = sc.next();
+
+        System.out.print("Enter Account Number: ");
+        number = sc.nextInt();
+
+        System.out.print("Enter Initial Balance: ");
+        balance = sc.nextFloat();
     }
-    
-      public void deposit()
-      {
-         System.out.println("enter Account to deposit");
-          float amount = sc.nextFloat();
-              balance = balance+amount;
-        
-        System.out.println("amount deposited successfuly");
-      }
-       public void withdr()
-      {
-         System.out.println("enter Account to withdr");
-         float amount =sc.nextFloat();
-          if(amount<=balance)
-          {
-              balance= balance-amount;
-              
-          }
-          
-          else{
-              
-               System.out.println("your amount is insuficient");
-          }
-      }
-      
-      public void checkBalance()
-      {
-           System.out.println("Account holder:" + name);
-           System.out.println("Account Number:" + number);
-           System.out.println("Current Balance: " + balance);
-      }
-      
-      public static void main (String[] args)
-      {
-          Account ac= new Account();
-          
-          ac.createAccounnt();
-          
-          ac.deposit();
-          
-          ac.withdr();
-          
-          ac.checkBalance();
-          
-      }
-      
+
+    public void deposit() {
+        System.out.print("Enter Amount to Deposit: ");
+        float amount = sc.nextFloat();
+
+        balance = balance + amount;
+
+        System.out.println("Amount deposited successfully.");
+    }
+
+    public void withdraw() {
+        System.out.print("Enter Amount to Withdraw: ");
+        float amount = sc.nextFloat();
+
+        if (amount <= balance) {
+            balance = balance - amount;
+            System.out.println("Amount withdrawn successfully.");
+        } else {
+            System.out.println("Insufficient balance.");
+        }
+    }
+
+    public void checkBalance() {
+        System.out.println("\n-- Account Details --");
+        System.out.println("Account Holder : " + name);
+        System.out.println("Account Number : " + number);
+        System.out.println("Current Balance: " + balance);
+    }
+
+    public static void main(String[] args) {
+
+        Account ac = new Account();
+
+        ac.createAccount();
+        ac.deposit();
+        ac.withdraw();
+        ac.checkBalance();
+    }
 }
